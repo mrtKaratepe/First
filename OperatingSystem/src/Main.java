@@ -6,27 +6,34 @@ public class Main {
 	 public static void main(String[] args) {
 
 		Scanner input = new Scanner(System.in);
-		System.out.println("Please Select one of them: \n [1]First Come First Served\n [2]Shortest Job First\n [3]Round Robin\n\n Choice:");
+		System.out.println("Please Select one of them: \n [1]First Come First Served\n [2]Shortest Job First\n [3]Round Robin\n [0]for Exit\n\n Choice:");
 		int m=input.nextInt();
 		
 		if (m==1)
 		{
 			FCFS();
-		}
-		else if (m==2)
+		}else if (m==2)
 		{
 			System.out.println("SJF Callout.");
-		}
-		else if (m==3)
+		}else if (m==3)
 		{
-			FCFS();
-		}
-		else
+			System.out.println("Round Robin Callout.");
+		}else if (m==0)
+		{
+			System.out.println("Bye Bye......");
+		}else
 		{
 			System.out.println("Opps! Wrong Choice...");
 		}
 		 
 	 }
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 	 public static void FCFS(){
 	  int i,n;
 	     float ortalama,beklemesuresý=0;
