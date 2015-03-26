@@ -62,6 +62,14 @@ public class Main {
 		}
 		
 		PrintProcesses();
+		System.out.print("\n Average Waiting Time= ");
+		int average=0;
+		
+		for(int i=0;i<FCFSList.size();i++){
+			average=average+FCFSList.get(i).getWaitingTime();			
+		}
+		average=average/FCFSList.size();
+		System.out.print(average);
 
 	}
 
@@ -82,12 +90,18 @@ public class Main {
 	}
 
 	private static void BringMinProcess() {
-		processGeneral = FCFSList.get(0);
+		int cnt=0;
+		processGeneral = FCFSList.get(cnt);
+		while(processGeneral.getCompletionTime() != 0){
+			processGeneral = FCFSList.get(cnt);
+			cnt++;
+		}
+		
 		
 		for (int i = 0; i < FCFSList.size(); i++) {
 
-			if (FCFSList.get(i).getCompletionTime() != 0) {
-				if (FCFSList.get(i).getArrivalTime() < processGeneral
+			if (FCFSList.get(i).getCompletionTime() == 0) {
+				if (FCFSList.get(i).getArrivalTime() <= processGeneral
 						.getArrivalTime()) {
 					processGeneral = FCFSList.get(i);
 				}
