@@ -2,7 +2,7 @@
 public class Process {
 	
 	private String ProcessName;
-	private int CputTime;
+	private int CpuTime;
 	private int ArrivalTime;
 	private int CompletionTime;
 	private int WaitingTime;
@@ -11,6 +11,8 @@ public class Process {
 	public Process(String processName) {
 		super();
 		ProcessName = processName;
+		this.CompletionTime=0;
+		this.WaitingTime=0;
 	}
 
 
@@ -24,13 +26,13 @@ public class Process {
 	}
 
 
-	public int getCputTime() {
-		return CputTime;
+	public int getCpuTime() {
+		return CpuTime;
 	}
 
 
-	public void setCputTime(int cputTime) {
-		CputTime = cputTime;
+	public void setCpuTime(int cputTime) {
+		CpuTime = cputTime;
 	}
 
 
