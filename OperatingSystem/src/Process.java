@@ -11,9 +11,22 @@ public class Process {
 	public Process(String processName) {
 		super();
 		ProcessName = processName;
+		this.ArrivalTime=0;
 		this.CompletionTime=0;
 		this.WaitingTime=0;
 	}
+
+	
+	
+	public Process(Process p) {
+		this.ProcessName=p.ProcessName;
+		this.CpuTime=p.CpuTime;
+		this.ArrivalTime=p.ArrivalTime;
+		this.CompletionTime=p.CompletionTime;
+		this.WaitingTime=p.WaitingTime;
+		
+	}
+
 
 
 	public String getProcessName() {
